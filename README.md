@@ -82,6 +82,10 @@ The app reads the CSV file in the same folder and supports the provided student 
 
 ## Screenshots and product views
 
+![Smart Candidate Screening System dashboard](assets/dashboard-preview.svg)
+
+*Dashboard preview showing candidate filters, summary metrics, and the student list.*
+
 The app includes:
 
 1. Dark dashboard layout
