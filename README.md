@@ -80,17 +80,17 @@ The app reads the CSV file in the same folder and supports the provided student 
 
 ## Screenshots and product views
 
-![Dashboard overview](assets/screenshots/dashboard-overview.png)
+![Dashboard overview](screenshots/dashboard-overview.png)
 
-![Student details](assets/screenshots/student-details.png)
+![Student details](screenshots/student-details.png)
 
-![Filtered candidate results](assets/screenshots/filter-results.png)
+![Filtered candidate results](screenshots/filter-results.png)
 
-![Scoring explanation](assets/screenshots/scoring-explanation.png)
+![Scoring explanation](screenshots/scoring-explanation.png)
 
-![Candidate list](assets/screenshots/candidate-list.png)
+![Candidate list](screenshots/candidate-list.png)
 
-![Smart Candidate Screening System dashboard](assets/dashboard-preview.svg)
+![Smart Candidate Screening System dashboard](screenshots/dashboard-preview.svg)
 
 *Dashboard preview showing candidate filters, summary metrics, and the student list.*
 
