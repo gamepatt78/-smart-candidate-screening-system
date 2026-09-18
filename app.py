@@ -279,10 +279,13 @@ st.caption("A transparent, consistent view of placement readiness")
 with st.sidebar:
     st.header("Filter candidates")
     search = st.text_input("Search name, ID or branch")
-    minimum_cgpa = st.slider("Minimum CGPA", 0.0, 10.0, 0.0, 0.1)
-    maximum_cgpa = st.slider("Maximum CGPA", 0.0, 10.0, 10.0, 0.1)
-    if maximum_cgpa < minimum_cgpa:
-        minimum_cgpa, maximum_cgpa = maximum_cgpa, minimum_cgpa
+    minimum_cgpa, maximum_cgpa = st.slider(
+        "CGPA range",
+        min_value=0.0,
+        max_value=10.0,
+        value=(0.0, 10.0),
+        step=0.1,
+    )
     all_skills = sorted({skill for skills in candidates["skills"] for skill in skills})
     selected_skills = st.multiselect("Required skills", all_skills)
     selected_categories = st.multiselect(
