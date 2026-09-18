@@ -1,7 +1,8 @@
 # Smart Candidate Screening System
 
-Live app: https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app
-Local preview for validation: http://127.0.0.1:8501
+Live app: https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
+GitHub repository: https://github.com/gamepatt78/-smart-candidate-screening-system
+Local preview: http://127.0.0.1:8501
 
 ## Project overview
 
@@ -86,4 +87,8 @@ This is a deterministic, explainable screening system built with Python and Stre
 
 ## Repository status
 
+<<<<<<< HEAD
 The project is already pushed to GitHub and is available at the repository link above. The application has been validated locally and is also available through the live Streamlit deployment link shown above.
+=======
+The project is pushed to the [GitHub repository](https://github.com/gamepatt78/-smart-candidate-screening-system). The application is available through the [live Streamlit deployment](https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/). The local preview URL works only while the app is running on the development computer.
+>>>>>>> 0ec5211 (Correct README project URLs)
