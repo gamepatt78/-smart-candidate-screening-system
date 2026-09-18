@@ -1,8 +1,8 @@
 # Smart Candidate Screening System
 
-Live app: https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
-GitHub repository: https://github.com/gamepatt78/-smart-candidate-screening-system
-Local preview: http://127.0.0.1:8501
+- **Live app:** https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
+- **GitHub repository:** https://github.com/gamepatt78/-smart-candidate-screening-system
+- **Local preview:** http://127.0.0.1:8501
 
 ## Project overview
 
