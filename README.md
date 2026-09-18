@@ -1,6 +1,6 @@
 # Smart Candidate Screening System
 
-Live app: https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
+Live app: https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app
 Local preview for validation: http://127.0.0.1:8501
 
 ## Project overview
