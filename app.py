@@ -280,6 +280,9 @@ with st.sidebar:
     st.header("Filter candidates")
     search = st.text_input("Search name, ID or branch")
     minimum_cgpa = st.slider("Minimum CGPA", 0.0, 10.0, 0.0, 0.1)
+    maximum_cgpa = st.slider("Maximum CGPA", 0.0, 10.0, 10.0, 0.1)
+    if maximum_cgpa < minimum_cgpa:
+        minimum_cgpa, maximum_cgpa = maximum_cgpa, minimum_cgpa
     all_skills = sorted({skill for skills in candidates["skills"] for skill in skills})
     selected_skills = st.multiselect("Required skills", all_skills)
     selected_categories = st.multiselect(
@@ -287,7 +290,7 @@ with st.sidebar:
     )
     show_explanation = st.toggle("Show scoring explanation", value=True)
 
-filtered = candidates[candidates["cgpa"].fillna(-1) >= minimum_cgpa]
+filtered = candidates[candidates["cgpa"].fillna(-1).between(minimum_cgpa, maximum_cgpa)]
 if search:
     query = search.strip()
     q_lower = query.lower()
