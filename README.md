@@ -4,6 +4,22 @@
 - **GitHub repository:** https://github.com/gamepatt78/-smart-candidate-screening-system
 - **Local preview:** http://127.0.0.1:8501
 
+## About
+
+Smart Candidate Screening System is an explainable placement-support dashboard that helps coordinators review student profiles consistently and prepare recruitment shortlists quickly. It uses written scoring rules instead of black-box decisions, so every candidate category can be understood and explained.
+
+**Website:** https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
+
+**Topics:**
+
+- Candidate screening
+- Placement management
+- Student shortlisting
+- Explainable scoring
+- Streamlit dashboard
+- Python
+- Pandas
+
 ## Project overview
 
 This project helps a placement coordinator review student profiles quickly and fairly. It reduces manual spreadsheet work by turning candidate data into a clean dashboard with scoring, filters, and clear explanations for each result.
