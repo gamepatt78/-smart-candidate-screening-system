@@ -6,7 +6,7 @@
 
 ## About
 
-Smart Candidate Screening System is an explainable placement-support dashboard that helps coordinators review student profiles consistently and prepare recruitment shortlists quickly. It uses written scoring rules instead of black-box decisions, so every candidate category can be understood and explained.
+Smart Candidate Screening System is a transparent placement tool that turns student records into fair, evidence-based shortlists. Coordinators can compare academic performance, skills, projects, internships, and certifications using shared rules and clear candidate explanations.
 
 **Website:** https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
 
