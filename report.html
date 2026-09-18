@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smart Candidate Screening System Report</title>
+<style>
+@page { size: A4; margin: 18mm 16mm; }
+:root { color: #1f2937; font-family: Arial, sans-serif; }
+body { margin: 0; line-height: 1.5; font-size: 10.5pt; }
+h1 { color: #173b63; font-size: 28pt; margin: 0 0 6pt; }
+h2 { color: #173b63; border-bottom: 2px solid #e45b52; padding-bottom: 4pt; margin: 20pt 0 8pt; font-size: 17pt; }
+h3 { color: #255b86; margin: 12pt 0 4pt; font-size: 12.5pt; }
+p { margin: 5pt 0 8pt; }
+ul, ol { margin-top: 4pt; }
+li { margin-bottom: 3pt; }
+.cover { padding: 34pt 0 22pt; border-bottom: 5px solid #e45b52; margin-bottom: 18pt; }
+.subtitle { color: #536579; font-size: 13pt; }
+.meta { color: #536579; margin-top: 18pt; }
+.callout { background: #eef5fb; border-left: 4px solid #2e719f; padding: 10pt 12pt; margin: 10pt 0; }
+table { width: 100%; border-collapse: collapse; margin: 8pt 0 12pt; font-size: 9.5pt; }
+th { background: #173b63; color: white; text-align: left; }
+th, td { border: 1px solid #cbd5e1; padding: 6pt; vertical-align: top; }
+tr:nth-child(even) td { background: #f5f8fb; }
+.gallery { page-break-before: always; }
+figure { margin: 12pt 0 18pt; page-break-inside: avoid; }
+figure img { width: 100%; max-height: 185mm; object-fit: contain; border: 1px solid #cbd5e1; }
+figcaption { color: #536579; font-size: 9pt; margin-top: 4pt; }
+.footer { color: #64748b; font-size: 8.5pt; border-top: 1px solid #cbd5e1; margin-top: 24pt; padding-top: 6pt; }
+</style>
+</head>
+<body>
+<section class="cover">
+<h1>Smart Candidate Screening System</h1>
+<div class="subtitle">Project Report</div>
+<p class="meta"><strong>Purpose:</strong> Transparent, consistent, and explainable student screening for placement teams.</p>
+<p class="meta"><strong>Technology:</strong> Python, Pandas, Streamlit, and CSV data.</p>
+<p class="meta"><strong>Live application:</strong> https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/</p>
+</section>
+
+<h2>1. Executive Summary</h2>
+<p>The Smart Candidate Screening System is a transparent web application for helping placement coordinators review student profiles quickly and consistently. It replaces slow, manual spreadsheet screening with a shared rule-based scoring process. Each candidate is evaluated using the same written criteria, and the application explains the reason for every category assigned.</p>
+<p>The system supports human decision-making rather than replacing it. Coordinators can filter candidates by identity, branch, CGPA, skills, and readiness category before preparing a recruitment shortlist.</p>
+
+<h2>2. Problem Statement</h2>
+<p>Manual candidate screening becomes unreliable as the number of students increases. Two coordinators reviewing the same dataset may reach different conclusions because the meaning of a “strong” candidate is not formally defined. Strong students can be overlooked when reviews are rushed or inconsistent, while recruitment drives often require a shortlist before there is enough time to thoroughly review every student.</p>
+<div class="callout"><strong>Need:</strong> A fast, consistent, explainable screening tool that applies shared rules and lets coordinators narrow candidates without manually scanning a spreadsheet.</div>
+
+<h2>3. Project Objectives</h2>
+<ol>
+<li>Create a shared definition of candidate readiness.</li>
+<li>Apply the same evaluation rules to every student.</li>
+<li>Provide a transparent explanation for each result.</li>
+<li>Reduce the time required to prepare recruitment shortlists.</li>
+<li>Allow coordinators to locate candidates using practical filters.</li>
+<li>Present candidate information in a clear dashboard.</li>
+</ol>
+
+<h2>4. Proposed Solution</h2>
+<p>The application reads candidate information from a CSV file, cleans and standardizes the data, calculates a score for each student, and displays the results in an interactive Streamlit dashboard.</p>
+<p>It uses deterministic rules rather than a black-box artificial intelligence model. The same candidate data always produces the same score and category, allowing a coordinator to inspect and explain the result in one sentence.</p>
+
+<h2>5. Evaluation Method</h2>
+<p>Each candidate can receive a maximum of 9 points:</p>
+<table><thead><tr><th>Evaluation area</th><th>Scoring rule</th><th>Maximum</th></tr></thead><tbody>
+<tr><td>CGPA</td><td>2 points for 8.5 or above; 1 point for 7.0 to 8.49</td><td>2</td></tr>
+<tr><td>Skills</td><td>2 points for 4 or more skills; 1 point for 2 to 3 skills</td><td>2</td></tr>
+<tr><td>Projects</td><td>2 points for 3 or more projects; 1 point for 1 to 2 projects</td><td>2</td></tr>
+<tr><td>Internship</td><td>2 points when internship experience is listed</td><td>2</td></tr>
+<tr><td>Certifications</td><td>1 point when at least one certification is listed</td><td>1</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td><strong>9</strong></td></tr>
+</tbody></table>
+<ul><li><strong>Strong:</strong> 7 to 9 points</li><li><strong>Average:</strong> 4 to 6 points</li><li><strong>Needs Improvement:</strong> 0 to 3 points</li></ul>
+
+<h2>6. Main Features</h2>
+<h3>Candidate dashboard</h3><p>Displays the candidate list, total students shown, and counts for each readiness category.</p>
+<h3>Search</h3><p>Searches by candidate name, ID, or branch. Numeric ID searches use exact matching, so searching for ID 2 does not return ID 12.</p>
+<h3>CGPA range filtering</h3><p>The range slider supports minimum and maximum values, such as 3.40 to 6.60. The reset button restores the visible range to 0.0 to 10.0.</p>
+<h3>Skills and category filtering</h3><p>Coordinators can find candidates with skills such as React and combine this with CGPA and category filters.</p>
+<h3>Explainable student details</h3><p>Each candidate has expandable details containing contact information, branch, CGPA, skills, projects, internship experience, certifications, and a scoring explanation.</p>
+
+<h2>7. Technical Implementation</h2>
+<ul><li><strong>Python:</strong> application logic</li><li><strong>Streamlit:</strong> interactive web interface</li><li><strong>Pandas:</strong> CSV loading, cleaning, filtering, and calculations</li><li><strong>CSV:</strong> candidate dataset storage</li></ul>
+<p>The system cleans missing values, converts CGPA values into numbers, separates list fields such as skills and projects, calculates scores, assigns categories, and applies the selected filters.</p>
+
+<h2>8. Benefits</h2>
+<ul><li>Faster shortlist preparation</li><li>More consistent evaluation across coordinators</li><li>Clear and defensible placement decisions</li><li>Less manual spreadsheet scanning</li><li>Easy combination of academic and technical filters</li><li>Better visibility into each student profile</li></ul>
+
+<h2>9. Limitations</h2>
+<p>The system is a screening aid, not a complete recruitment decision-maker. Its results depend on accurate and complete CSV data. The simple scoring rules may not capture communication ability, interview performance, leadership, or role-specific requirements. Authentication, direct CSV upload, shortlist export, recruiter notes, and role-specific scoring are future enhancements.</p>
+
+<h2>10. Future Enhancements</h2>
+<ul><li>Upload and validate new candidate files</li><li>Export filtered shortlists to CSV or PDF</li><li>Role-specific rules for different recruitment tracks</li><li>Recruiter notes and shortlist status tracking</li><li>Authentication and coordinator-level access control</li><li>Audit history for scoring rule changes</li></ul>
+
+<h2>11. Conclusion</h2>
+<p>The Smart Candidate Screening System addresses inconsistency, delay, and lack of explainability in manual candidate review. By applying written scoring rules to every student and providing practical filters, it helps placement coordinators prepare fair shortlists more efficiently.</p>
+<p>The system does not make mysterious decisions. It provides a transparent starting point that coordinators can inspect, explain, and use alongside professional judgment.</p>
+
+<section class="gallery">
+<h2>12. Screenshots and Product Views</h2>
+<figure><img src="assets/screenshots/dashboard-overview.png"><figcaption>Dashboard overview with summary metrics and candidate filters.</figcaption></figure>
+<figure><img src="assets/screenshots/student-details.png"><figcaption>Expandable student details and scoring explanation.</figcaption></figure>
+<figure><img src="assets/screenshots/filter-results.png"><figcaption>Filtered candidate results.</figcaption></figure>
+<figure><img src="assets/screenshots/scoring-explanation.png"><figcaption>Transparent scoring rules shown inside the application.</figcaption></figure>
+<figure><img src="assets/screenshots/candidate-list.png"><figcaption>Candidate list with CGPA, skills, projects, and category.</figcaption></figure>
+</section>
+<div class="footer">Smart Candidate Screening System | Project report</div>
+</body>
+</html>
