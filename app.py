@@ -7,6 +7,190 @@ import streamlit as st
 
 st.set_page_config(page_title="Candidate Screening", page_icon="CS", layout="wide")
 
+st.markdown(
+    """
+    <style>
+        :root {
+            --bg: #0b1018;
+            --bg-2: #121b29;
+            --panel: #111a27;
+            --panel-strong: #0d1622;
+            --panel-soft: #1b2738;
+            --border: rgba(255,255,255,0.08);
+            --text: #edf3ff;
+            --muted: #b5c0d5;
+            --accent: #f26464;
+            --accent-2: #ff8a5b;
+            --success: #4be2b5;
+            --warning: #f7d26b;
+        }
+
+        .stApp {
+            background: linear-gradient(180deg, #0e1520 0%, #101a27 100%);
+            color: var(--text);
+        }
+
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 3rem;
+            max-width: 1400px;
+        }
+
+        div[data-testid="stSidebar"] {
+            background: linear-gradient(180deg, #0d151f 0%, #111b28 100%);
+            border-right: 1px solid var(--border);
+        }
+
+        div[data-testid="stSidebar"] > div {
+            padding-top: 1rem;
+        }
+
+        [data-testid="stSidebarContent"] {
+            background: rgba(17, 26, 39, 0.92);
+        }
+
+        .stHeader {
+            background: rgba(11, 16, 24, 0.9);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text) !important;
+        }
+
+        .stDataFrame, .stTable {
+            background: rgba(17, 24, 39, 0.92);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        div[data-testid="stDataFrameWrapper"] {
+            overflow-x: auto;
+            border-radius: 12px;
+        }
+
+        table {
+            background: #0f1724 !important;
+            color: var(--text) !important;
+        }
+
+        th {
+            background: rgba(30, 41, 59, 0.9) !important;
+            color: var(--text) !important;
+            border-bottom: 1px solid var(--border) !important;
+        }
+
+        td {
+            background: rgba(15, 23, 36, 0.9) !important;
+            color: var(--text) !important;
+            border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+            white-space: nowrap;
+        }
+
+        .stMetric {
+            background: rgba(21, 31, 42, 0.85);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 0.8rem 1rem;
+            box-shadow: none;
+        }
+
+        [data-testid="stMetricValue"] {
+            color: var(--text);
+        }
+
+        [data-testid="stMetricDelta"] {
+            color: var(--muted);
+        }
+
+        .stTextInput > div > div > input,
+        .stSelectbox > div > div,
+        .stMultiSelect > div > div,
+        .stSlider > div > div,
+        .stNumberInput > div > div,
+        .stRadio > div,
+        .stCheckbox > label {
+            background: rgba(17, 24, 39, 0.8);
+            color: var(--text);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+        }
+
+        .stTextInput input,
+        .stSelectbox div[data-baseweb="select"] {
+            color: var(--text) !important;
+            background: transparent !important;
+        }
+
+        .stTextInput input::placeholder,
+        .stSelectbox [role="button"] {
+            color: var(--muted) !important;
+        }
+
+        .stCheckbox {
+            color: var(--text);
+        }
+
+        .stToggle [data-testid="stBaseButton-secondary"] {
+            background: rgba(17,24,39,0.8);
+        }
+
+        .stExpander {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .stExpander summary {
+            color: var(--text) !important;
+            background: transparent;
+        }
+
+        .st-emotion-cache-18ni7ap {
+            color: var(--text) !important;
+        }
+
+        .stApp a {
+            color: #8ec5ff;
+        }
+
+        @media (max-width: 768px) {
+            .block-container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.45rem !important;
+            }
+
+            div[data-testid="stSidebar"] {
+                position: static !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            [data-testid="stSidebarContent"] {
+                padding: 0.75rem 0.75rem 1rem 0.75rem;
+            }
+
+            [data-testid="stMetric"] {
+                margin-bottom: 0.6rem;
+            }
+
+            .stExpander {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 DATA_FILE = Path(__file__).with_name("students.csv")
 MISSING_VALUES = {"", "na", "n/a", "none", "null", "-"}
 
@@ -105,12 +289,18 @@ with st.sidebar:
 
 filtered = candidates[candidates["cgpa"].fillna(-1) >= minimum_cgpa]
 if search:
-    query = search.strip().lower()
-    filtered = filtered[
-        filtered[["id", "name", "branch"]].fillna("").apply(
-            lambda row: row.astype(str).str.lower().str.contains(query, regex=False).any(), axis=1
-        )
-    ]
+    query = search.strip()
+    q_lower = query.lower()
+    if query.isdigit():
+        filtered = filtered[
+            filtered["id"].astype(str).str.strip().str.lower().eq(q_lower)
+        ]
+    else:
+        filtered = filtered[
+            filtered[["name", "branch"]].fillna("").apply(
+                lambda row: row.astype(str).str.lower().str.contains(q_lower, regex=False).any(), axis=1
+            )
+        ]
 if selected_skills:
     wanted = {skill.lower() for skill in selected_skills}
     filtered = filtered[filtered["skills"].map(lambda skills: wanted.issubset({s.lower() for s in skills}))]
@@ -136,7 +326,7 @@ else:
     st.dataframe(
         table,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "CGPA": st.column_config.NumberColumn(format="%.2f"),
             "Category": st.column_config.TextColumn(width="medium"),

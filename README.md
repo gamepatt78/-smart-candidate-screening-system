@@ -1,73 +1,80 @@
 # Smart Candidate Screening System
 
-Live repo: https://github.com/gamepatt78/-smart-candidate-screening-system
 Live app: https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
 Local preview for validation: http://127.0.0.1:8501
 
-## Problem and understanding
+## Project overview
 
-The goal of this project is to help a placement coordinator quickly review a large group of student profiles and identify which candidates look strongest for internship and job opportunities. The issue is not just raw academic marks; it is also the mix of technical skills, projects, work exposure, and certifications that together show how job-ready a student is.
+This project helps a placement coordinator review student profiles quickly and fairly. It reduces manual spreadsheet work by turning candidate data into a clean dashboard with scoring, filters, and clear explanations for each result.
 
-This app turns that review into a consistent, explainable process. Instead of relying on gut feeling or scattered spreadsheets, the system gives each student a transparent score and a category so the coordinator can compare people fairly and make quicker decisions.
+The system is designed to be transparent and easy to trust. Instead of relying on hidden logic, it uses a simple rule-based scoring model to assess students based on academic performance, skills, projects, internships, and certifications.
 
 ## What the application does
 
-- Shows all students in one dashboard
-- Filters students by name, branch, CGPA minimum, skills, and category
-- Summarizes the visible shortlist with category counts
-- Explains the reason behind each student’s category
-- Lets the reviewer inspect each candidate’s profile without losing context
+- Displays all candidates in a single dashboard
+- Filters by name, ID, branch, minimum CGPA, skills, and category
+- Shows summary metrics for Strong, Average, and Needs Improvement candidates
+- Explains why each student falls into a score category
+- Supports viewing detailed student information in a compact, easy-to-read layout
+- Works for both desktop and mobile screens
 
-## Categorization logic in plain language
+## Candidate scoring logic
 
-A student is scored based on five simple signals. Each signal adds points for evidence of readiness:
+Each student receives points using the following rules:
 
-- CGPA: 2 points for a strong academic record at 8.5 or above, 1 point for 7.0 to 8.49
-- Skills: 2 points for 4 or more listed skills, 1 point for 2 to 3 skill areas
+- CGPA: 2 points for 8.5 or above, 1 point for 7.0 to 8.49
+- Skills: 2 points for 4 or more skills, 1 point for 2 to 3 skills
 - Projects: 2 points for 3 or more projects, 1 point for 1 to 2 projects
-- Internship experience: 2 points if an internship is included
-- Certifications: 1 point if at least one certificate is present
+- Internship experience: 2 points if present
+- Certifications: 1 point if at least one certification is listed
 
-The total score ranges from 0 to 9.
+Total score range: 0 to 9
 
-- Strong: 7 to 9 points
-- Average: 4 to 6 points
-- Needs Improvement: 0 to 3 points
+- Strong: 7 to 9
+- Average: 4 to 6
+- Needs Improvement: 0 to 3
 
-This is designed to be easy to trust. A placement coordinator can look at the score and immediately understand why a student landed in a category. Missing information does not hurt a student by itself; it simply means that signal is not present in the profile.
+This keeps the model explainable and useful for real placement review decisions.
 
-## How to run
+## How to run locally
 
 ```bash
 python -m pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The application reads the CSV file in the same folder and supports both the provided template columns and the original alternate column variations.
+The app reads the CSV file in the same folder and supports the provided student template format.
+
+## Project structure
+
+- app.py — main Streamlit application
+- students.csv — candidate dataset
+- requirements.txt — project dependencies
+- README.md — project documentation
 
 ## Screenshots and product views
 
-The app has the following key screens:
+The app includes:
 
-1. Full student list and dashboard
-2. Filter panel for CGPA, skills, and category
-3. Student detail expansion with scoring explanation
-4. Category summary counts
+1. Dark dashboard layout
+2. Filter sidebar for search and category selection
+3. Summary metric cards
+4. Candidate table and expandable student detail section
 
-These views are visible in the running Streamlit app at the local preview URL above. If the app is deployed to a public hosting platform later, the same screenshots can be refreshed there as part of the final presentation pack.
+The final UI is optimized for both desktop and mobile browsing.
 
 ## Technical notes
 
-The project is intentionally deterministic and explainable. It uses a simple rule-based scoring model instead of a black-box model so the result can be reviewed and justified by a human recruiter or coordinator.
+This is a deterministic, explainable screening system built with Python and Streamlit. It uses a simple scoring rule set rather than a black-box model, which makes it suitable for recruiter or placement review workflows.
 
-## What I would improve with more time
+## Future enhancements
 
-- Allow uploading a new CSV from the interface instead of editing the file locally
-- Add export of shortlisted students to CSV or PDF
-- Add role-specific matching for different job tracks such as software, data, or mechanical roles
-- Add more advanced filters and recruiter notes
-- Add authentication and role-based access for placement teams
+- Upload a new CSV directly from the interface
+- Export shortlisted candidates to CSV or PDF
+- Add role-based filtering for software, data, or mechanical tracks
+- Add recruiter notes and shortlisting actions
+- Add authentication for team access
 
 ## Repository status
 
-This project is already pushed to GitHub and is available at the repository link above. The app itself has been validated locally with the working dataset and is ready for deployment to a public platform when a hosting account is available.
+The project is already pushed to GitHub and is available at the repository link above. The application has been validated locally and is also available through the live Streamlit deployment link shown above.
