@@ -1,5 +1,7 @@
 # Smart Candidate Screening System
 
+![Candidate screening dashboard preview](assets/dashboard-preview.svg)
+
 - **Live app:** https://gamepatt78--smart-candidate-screening-system-app-1fibjl.streamlit.app/
 - **GitHub repository:** https://github.com/gamepatt78/-smart-candidate-screening-system
 - **Local preview:** http://127.0.0.1:8501

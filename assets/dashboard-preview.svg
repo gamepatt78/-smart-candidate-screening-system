@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Candidate Screening dashboard preview</title>
+  <desc id="desc">Dark placement dashboard with candidate filters, summary metrics, and a student list.</desc>
+  <rect width="1400" height="720" fill="#0e1520"/>
+  <rect width="260" height="720" fill="#111b28"/>
+  <rect x="260" width="1140" height="720" fill="#101a27"/>
+  <text x="28" y="58" fill="#edf3ff" font-family="Arial, sans-serif" font-size="25" font-weight="700">Filter candidates</text>
+  <text x="28" y="105" fill="#edf3ff" font-family="Arial, sans-serif" font-size="14">Search name, ID or branch</text>
+  <rect x="28" y="120" width="204" height="42" rx="8" fill="#0b1018" stroke="#344052"/>
+  <rect x="28" y="184" width="132" height="36" rx="7" fill="#343b4b" stroke="#657187"/>
+  <text x="41" y="207" fill="#edf3ff" font-family="Arial, sans-serif" font-size="13">Reset CGPA range</text>
+  <text x="28" y="260" fill="#edf3ff" font-family="Arial, sans-serif" font-size="14">CGPA range</text>
+  <text x="28" y="283" fill="#ff5b5f" font-family="Arial, sans-serif" font-size="13">0.00</text>
+  <text x="200" y="283" fill="#ff5b5f" font-family="Arial, sans-serif" font-size="13">10.00</text>
+  <rect x="31" y="296" width="198" height="5" rx="3" fill="#ff4b4f"/>
+  <circle cx="31" cy="298" r="7" fill="#ff5b5f"/>
+  <circle cx="229" cy="298" r="7" fill="#ff5b5f"/>
+  <text x="28" y="352" fill="#edf3ff" font-family="Arial, sans-serif" font-size="14">Required skills</text>
+  <rect x="28" y="366" width="204" height="42" rx="8" fill="#111827" stroke="#344052"/>
+  <text x="42" y="392" fill="#aebbd0" font-family="Arial, sans-serif" font-size="13">Choose options</text>
+  <text x="28" y="458" fill="#edf3ff" font-family="Arial, sans-serif" font-size="14">Categories</text>
+  <rect x="28" y="472" width="204" height="42" rx="8" fill="#111827" stroke="#344052"/>
+  <text x="42" y="498" fill="#aebbd0" font-family="Arial, sans-serif" font-size="13">Choose options</text>
+  <rect x="28" y="548" width="28" height="16" rx="8" fill="#ff4b4f"/>
+  <circle cx="47" cy="556" r="6" fill="#ffffff"/>
+  <text x="68" y="561" fill="#edf3ff" font-family="Arial, sans-serif" font-size="13">Show scoring explanation</text>
+  <text x="300" y="72" fill="#edf3ff" font-family="Arial, sans-serif" font-size="38" font-weight="700">Candidate Screening</text>
+  <text x="300" y="105" fill="#9ba8bb" font-family="Arial, sans-serif" font-size="14">A transparent, consistent view of placement readiness</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="300" y="140" width="250" height="92" rx="12" fill="#172231" stroke="#29384b"/>
+    <rect x="565" y="140" width="250" height="92" rx="12" fill="#172231" stroke="#29384b"/>
+    <rect x="830" y="140" width="250" height="92" rx="12" fill="#172231" stroke="#29384b"/>
+    <rect x="1095" y="140" width="250" height="92" rx="12" fill="#172231" stroke="#29384b"/>
+    <text x="322" y="168" fill="#edf3ff" font-size="13">Students shown</text><text x="322" y="212" fill="#edf3ff" font-size="32">15</text>
+    <text x="587" y="168" fill="#edf3ff" font-size="13">Strong</text><text x="587" y="212" fill="#edf3ff" font-size="32">4</text>
+    <text x="852" y="168" fill="#edf3ff" font-size="13">Average</text><text x="852" y="212" fill="#edf3ff" font-size="32">3</text>
+    <text x="1117" y="168" fill="#edf3ff" font-size="13">Needs Improvement</text><text x="1117" y="212" fill="#edf3ff" font-size="32">8</text>
+  </g>
+  <line x1="300" y1="270" x2="1345" y2="270" stroke="#344052"/>
+  <text x="300" y="325" fill="#edf3ff" font-family="Arial, sans-serif" font-size="26" font-weight="700">Student list</text>
+  <text x="300" y="355" fill="#9ba8bb" font-family="Arial, sans-serif" font-size="14">Showing 15 of 15 students</text>
+  <rect x="300" y="380" width="1045" height="250" rx="10" fill="#0d131d" stroke="#29384b"/>
+  <rect x="300" y="380" width="1045" height="38" rx="10" fill="#1d2430"/>
+  <g fill="#aebbd0" font-family="Arial, sans-serif" font-size="13"><text x="318" y="404">ID</text><text x="415" y="404">Name</text><text x="585" y="404">Branch</text><text x="800" y="404">CGPA</text><text x="920" y="404">Skills</text><text x="1030" y="404">Projects</text><text x="1160" y="404">Category</text></g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#edf3ff">
+    <text x="318" y="450">1</text><text x="415" y="450">Aarav Gupta</text><text x="585" y="450">Computer Science</text><text x="800" y="450">9.30</text><text x="920" y="450">3</text><text x="1030" y="450">2</text><text x="1160" y="450">Strong</text>
+    <text x="318" y="490">2</text><text x="415" y="490">Ishita Verma</text><text x="585" y="490">Information Technology</text><text x="800" y="490">8.90</text><text x="920" y="490">3</text><text x="1030" y="490">1</text><text x="1160" y="490">Strong</text>
+    <text x="318" y="530">3</text><text x="415" y="530">Rohan Nair</text><text x="585" y="530">Computer Science</text><text x="800" y="530">9.10</text><text x="920" y="530">3</text><text x="1030" y="530">2</text><text x="1160" y="530">Strong</text>
+    <text x="318" y="570">4</text><text x="415" y="570">Megha Sharma</text><text x="585" y="570">Software Engineering</text><text x="800" y="570">8.50</text><text x="920" y="570">3</text><text x="1030" y="570">1</text><text x="1160" y="570">Strong</text>
+  </g>
+  <text x="300" y="680" fill="#9ba8bb" font-family="Arial, sans-serif" font-size="13">Transparent rules. Faster shortlists. Consistent decisions.</text>
+</svg>
