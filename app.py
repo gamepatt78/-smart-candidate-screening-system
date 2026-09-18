@@ -281,16 +281,21 @@ with st.sidebar:
     search = st.text_input("Search name, ID or branch")
 
     default_cgpa_range = (0.0, 10.0)
+    if "cgpa_range" not in st.session_state:
+        st.session_state["cgpa_range"] = default_cgpa_range
+
+    def reset_cgpa_range():
+        st.session_state["cgpa_range"] = default_cgpa_range
+
+    st.button("Reset CGPA range", on_click=reset_cgpa_range)
     cgpa_range = st.slider(
         "CGPA range",
         min_value=0.0,
         max_value=10.0,
-        value=default_cgpa_range,
+        value=st.session_state["cgpa_range"],
+        key="cgpa_range",
         step=0.1,
     )
-    if st.button("Reset CGPA range"):
-        cgpa_range = default_cgpa_range
-        st.session_state["cgpa_range"] = default_cgpa_range
 
     minimum_cgpa, maximum_cgpa = cgpa_range
     all_skills = sorted({skill for skills in candidates["skills"] for skill in skills})
