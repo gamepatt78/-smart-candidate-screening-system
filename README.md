@@ -9,10 +9,19 @@ This project helps a placement coordinator review student profiles quickly and f
 
 The system is designed to be transparent and easy to trust. Instead of relying on hidden logic, it uses a simple rule-based scoring model to assess students based on academic performance, skills, projects, internships, and certifications.
 
+## Problem statement
+
+Manual candidate screening becomes difficult and inconsistent as the number of students grows. Two coordinators reviewing the same dataset may reach different conclusions about who is a strong candidate because there is no shared, written definition of what "strong" means. Excellent students can be overlooked when resumes are reviewed at different levels of detail, while recruitment drives often require a shortlist before there is enough time to thoroughly review every student.
+
+The placement team needs a tool that removes this guesswork without using mysterious, black-box decisions. The rules for categorizing each student should be written clearly so a coordinator can explain a result in one sentence. The tool should also make it possible to quickly narrow the list, for example by finding students with a CGPA above 8 who know React, without manually scanning a spreadsheet.
+
+This project addresses the problem with a deterministic scoring system, clear category thresholds, explainable results, and interactive filters.
+
 ## What the application does
 
 - Displays all candidates in a single dashboard
-- Filters by name, ID, branch, minimum CGPA, skills, and category
+- Filters by name, ID, branch, CGPA range, skills, and category
+- Resets the CGPA range to the default 0.0 to 10.0 range
 - Shows summary metrics for Strong, Average, and Needs Improvement candidates
 - Explains why each student falls into a score category
 - Supports viewing detailed student information in a compact, easy-to-read layout
