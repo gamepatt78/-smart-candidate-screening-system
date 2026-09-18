@@ -80,7 +80,15 @@ The app reads the CSV file in the same folder and supports the provided student 
 - requirements.txt — project dependencies
 - README.md — project documentation
 
-## Screenshots and product views
+![Dashboard overview](assets/screenshots/dashboard-overview.png)
+
+![Student details](assets/screenshots/student-details.png)
+
+![Filtered candidate results](assets/screenshots/filter-results.png)
+
+![Scoring explanation](assets/screenshots/scoring-explanation.png)
+
+![Candidate list](assets/screenshots/candidate-list.png)
 
 ![Smart Candidate Screening System dashboard](assets/dashboard-preview.svg)
 
